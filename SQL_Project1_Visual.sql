@@ -1,4 +1,4 @@
-﻿select * 
+select * 
 from PortfolioProject.dbo.FcovidDeath
 where continent is not null
 order by location, date				-- [order by 3,4]: 테이블의 3,4번째 컬럼 기준으로 정렬하겠다는 말
@@ -122,7 +122,7 @@ join PortfolioProject.dbo.FcovidVaccination vac
 where dea.continent is not null
 --order by 2,3
 ) 
-select *, (RollingPeopleVaccinted/population)*100 as 'Rate'
+select *, (RollingPeopleVaccinted/population)*100 as PercentPeopleVaccinated
 from PopvsVcc
 
 
@@ -154,7 +154,7 @@ join PortfolioProject.dbo.FcovidVaccination vac
 --where dea.continent is not null
 --order by 2,3
 
-select *, (RollingPeopleVaccinated/population)*100 as 'Rate'
+select *, (RollingPeopleVaccinated/population)*100 as PercentPeopleVaccinated
 from #PercentPopulationVaccinated
 
 
