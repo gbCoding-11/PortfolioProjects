@@ -1,8 +1,12 @@
+/*
+Covid 19 Data Exploration 
+Skills used: Joins, CTE's, Temp Tables, Aggregate Functions, Creating Views, Converting Data Types
+*/
+
 select * 
 from PortfolioProject.dbo.FcovidDeath
 where continent is not null
-order by location, date				-- [order by 3,4]: 테이블의 3,4번째 컬럼 기준으로 정렬하겠다는 말
-									-- [order by name, name] : name으로 지정해놔야 나중에 변경사항있을 때 혼동안되고 좋다.
+order by location, date				
 
 
 select * 
@@ -128,7 +132,7 @@ from PopvsVcc
 
 
 		
-		--TEMP TABLE 이용하는방법 ::RollingPeopleVaccinated를 table로 간단히 이용해서 rate구하려고	
+		--TEMP TABLE 이용 ::RollingPeopleVaccinated를 table로 간단히 이용해서 rate구하려고	
 
 Drop table if exists #PercentPopulationVaccinated	-- I highly recommend just adding this
 create table #PercentPopulationVaccinated
